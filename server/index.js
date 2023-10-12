@@ -25,11 +25,11 @@ app.use(cookieParser())
 app.get('/cookie', (req, res)=>{
     res.cookie("foo", "barr",
     {
-        httpOnly: true, //accessible only by web server 
+        httpOnly: true, //accessible only by web server
         secure: false, //https
-        sameSite: true, //cross-site cookie 
+        sameSite: true, //cross-site cookie
         maxAge: 7 * 24 * 60 * 60 * 1000, //cookie expiry: set to match rT
-        
+
     }
     )
     res.send("cookie set successfully")
@@ -49,7 +49,7 @@ mongoose.connection.once('open', ()=>{
     console.log('Connecté à mongodb');
     app.listen(port, ()=>{
         console.log(`server running on port ${port}`);
-        
+
     })
 })
 

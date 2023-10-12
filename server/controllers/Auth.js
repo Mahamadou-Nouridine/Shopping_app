@@ -3,6 +3,7 @@ const bcrypt = require('bcrypt')
 const clientModel = require('../models/client')
 
 const login = async (req, res) => {
+    console.log("in login");
     const { email, password } = req.body
     if (!email || !password) return res.status(400).json({
         message: 'All fiel are reqired'
@@ -44,9 +45,9 @@ const login = async (req, res) => {
         'jwt',
         refreshTocken,
         {
-            httpOnly: true, //accessible only by web server 
+            httpOnly: true, //accessible only by web server
             secure: false, //https
-            sameSite: false, //cross-site cookie 
+            sameSite: false, //cross-site cookie
             maxAge: 7 * 24 * 60 * 60 * 1000, //cookie expiry: set to match rT
             domain: 'localhost',
 
