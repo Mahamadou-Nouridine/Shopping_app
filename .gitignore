@@ -29,11 +29,15 @@ server/.env
 server/.pnp
 server/.pnp.js
 
+
+
 # testing
 server/coverage
 
 # production
 server/build
+
+
 
 # misc
 server/.DS_Store
