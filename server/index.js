@@ -15,7 +15,7 @@ app.use(cookieParser());
 
 app.use(
   cors({
-    origin: ["https://shopping-app-client.onrender.com/", "localhost"],
+    origin:true,
     credentials: true,
   })
 );
